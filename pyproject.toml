@@ -39,4 +39,4 @@ Repository = "https://github.com/Santt997/sp2en"
 sources = ["src"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src"]
+only-include = ["src/sp2en.py"]
