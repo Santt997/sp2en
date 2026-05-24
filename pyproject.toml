@@ -17,12 +17,12 @@ classifiers = [
     "Intended Audience :: Developers",
     "Intended Audience :: End Users/Desktop",
     "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3.14.5",
+    "Programming Language :: Python :: 3.14",
     "Topic :: Multimedia :: Graphics :: Graphics Conversion",
     "Topic :: Utilities",
     "Environment :: Console",
 ]
-requires-python = "=3.14.5"
+requires-python = ">=3.14"
 
 
 [project.scripts]
