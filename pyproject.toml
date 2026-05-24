@@ -29,10 +29,10 @@ requires-python = "=3.14.5"
 inv-pdf = "inv_pdf.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/Santt997/inv-colors"
-Repository = "https://github.com/Santt997/inv-colors"
-"Bug Tracker" = "https://github.com/Santt997/inv-colors/issues"
-Changelog = "https://github.com/Santt997/inv-colors/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/Santt997/sp2en"
+Repository = "https://github.com/Santt997/sp2en"
+"Bug Tracker" = "https://github.com/Santt997/sp2en/issues"
+Changelog = "https://github.com/Santt997/sp2en/blob/main/CHANGELOG.md"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/inv_pdf"]
