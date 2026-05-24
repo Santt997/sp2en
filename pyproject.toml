@@ -28,7 +28,7 @@ classifiers = [
 requires-python = ">=3.14"
 
 [project.scripts]
-sp2en = "sp2en:main"
+sp2en = "sp2en.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/Santt997/sp2en"
@@ -39,4 +39,4 @@ Repository = "https://github.com/Santt997/sp2en"
 sources = ["src"]
 
 [tool.hatch.build.targets.wheel]
-only-include = ["src/sp2en.py"]
+packages = ["sp2en"]
