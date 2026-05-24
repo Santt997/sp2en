@@ -8,31 +8,35 @@ version = "0.1.0"
 description = "swap spanish to english"
 readme = "README.md"
 license = { text = "MIT" }
+
 authors = [
     { name = "Santt997", email = "santiago.burastero@gmail.com" },
 ]
+
 keywords = ["sp", "en", "spanish", "english"]
+
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "Intended Audience :: End Users/Desktop",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3.14",
-    "Topic :: Multimedia :: Graphics :: Graphics Conversion",
     "Topic :: Utilities",
     "Environment :: Console",
 ]
+
 requires-python = ">=3.14"
 
-
 [project.scripts]
-sp2en = "sp2en.cli:main"
+sp2en = "sp2en:main"
 
 [project.urls]
 Homepage = "https://github.com/Santt997/sp2en"
 Repository = "https://github.com/Santt997/sp2en"
 "Bug Tracker" = "https://github.com/Santt997/sp2en/issues"
-Changelog = "https://github.com/Santt997/sp2en/blob/main/CHANGELOG.md"
+
+[tool.hatch.build]
+sources = ["src"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/sp2en"]
