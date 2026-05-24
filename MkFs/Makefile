@@ -4,9 +4,11 @@
 # Config
 # =========================
 
-PROJECT_DIR := $(HOME)/Documentos/GitHub/Docs-SrAnderson-mio/learn-quarto/dev/Programs/Utils/4extensionsOfFiles/4ipynbs/sp2en
+ROOT_DIR=$(shell git rev-parse --show-toplevel)
+PROJECT_DIR=$(ROOT_DIR)
 
 ENV_NAME := sp2en
+MAMBA=micromamba
 
 YML_FILE := $(PROJECT_DIR)/Envs/sp2en.yml
 
@@ -47,6 +49,26 @@ create:
 
 	@echo "[OK] Env created"
 
+build: clean
+	@echo "📦 Building package..."
+
+	cd $(ROOT_DIR) && \
+	$(MAMBA) run -n $(ENV_NAME) \
+		python -m build
+
+check:
+	@echo "🔍 Checking package..."
+
+	cd $(ROOT_DIR) && \
+	$(MAMBA) run -n $(ENV_NAME) \
+		twine check dist/*
+
+upload:
+	@echo "🚀 Uploading to PyPI..."
+
+	cd $(ROOT_DIR) && \
+	$(MAMBA) run -n $(ENV_NAME) \
+		twine upload dist/*
 
 delete:
 	@echo "[DELETE] Removing environment: $(ENV_NAME)"
@@ -67,6 +89,8 @@ update:
 
 	@echo "[OK] Env updated"
 
+
+release: build check upload
 
 # =========================
 # Run
