@@ -111,6 +111,27 @@ run:
 		> "$$PYTHON_LOG" 2>&1; \
 	echo "[OK] Completed"
 
+clean:
+	@echo "🧹 Cleaning build artifacts..."
+
+	cd $(ROOT_DIR) && \
+	rm -rf dist build *.egg-info
+
+deep-clean: clean clean-logs
+	@echo "💀 Deep cleaning repo..."
+
+	cd $(ROOT_DIR) && \
+	find . -type d -name "__pycache__" -exec rm -rf {} + && \
+	find . -type d -name ".pytest_cache" -exec rm -rf {} + && \
+	find . -type d -name ".mypy_cache" -exec rm -rf {} + && \
+	find . -type d -name ".ruff_cache" -exec rm -rf {} + && \
+	find . -type d -name ".ipynb_checkpoints" -exec rm -rf {} + && \
+	find . -type f -name "*.pyc" -delete && \
+	find . -type f -name "*.pyo" -delete && \
+	find . -type f -name ".coverage" -delete && \
+	rm -rf .tox .nox htmlcov
+
+	@echo "[OK] Deep clean completed"
 
 # =========================
 # Logs
