@@ -1,0 +1,123 @@
+ mod 
+ nexts 
+ s.t. 
+*NOTE*
+ appear 
+Attrs
+Attr
+attrs
+attr
+Help:
+ each 
+ `str`
+ qty  
+ case 
+ w 
+ key 
+ keys:
+chars
+checks
+Sets
+sets
+Set
+`set`
+wtxt
+ `list[int]` 
+ `list[elems]` 
+ `list[str]`
+ inputData 
+ of 
+ `->` 
+ `->` 
+ where
+Def. 
+Def.
+def.
+def.
+Dicts
+dicts
+Dict
+`dict`
+ 2 
+fn
+fns
+
+
+The 
+ `rm` 
+ elem 
+ elems 
+Exs
+Ex
+In 
+Find 
+ in 
+ `int` 
+ stmt 
+ is 
+ this 
+ this 
+explicitly
+Find 
+ implement 
+Implement 
+ game 
+The 
+ the 
+ the 
+ lists
+The 
+ the 
+After
+ +
+ through 
+mtd
+moment
+ new 
+nº
+nº
+Obviusly
+word 
+ part 
+ 1º 
+ 1º 
+cartesian_prod
+`sqrt`
+DoubleRecusion
+doubleRecursion
+Recursion
+recursion
+recursive
+ let 
+Let 
+Secuences
+2º mtd
+ if 
+ over 
+ ask 
+Sols
+Sol
+sols
+solución 
+sum_dicts
+ sum 
+ q 
+ q,
+ q:
+ q 
+ has 
+Some 
+1 
+ 1 
+ some 
+ 1 
+use 
+using 
+validations
+numericVal
+numericVals
+ vals
+ val
+times
+see
+time

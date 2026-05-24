@@ -1,0 +1,124 @@
+ módulo 
+ siguientes 
+ tal que 
+*NOTA*
+ aparece 
+Atributos
+Atributo
+atributos
+atributo
+Ayuda:
+ cada 
+ cadena 
+ cantidad 
+ caso 
+ con 
+ clave 
+ claves:
+caracteres
+chequeos
+Conjuntos
+conjuntos
+Conjunto
+conjunto
+contexto
+ lista de enteros 
+ lista de elementos 
+ lista de cadenas
+ datos de entrada 
+ de 
+ devuelva 
+ devuelvan 
+ donde
+Definir 
+Definición
+definición.
+definición
+Diccionarios
+diccionarios
+Diccionario
+diccionario
+ dos 
+función
+funciones
+Ejercicios
+Ejercicio
+El 
+ elimine 
+ elemento 
+ elementos 
+ ejemplos
+ ejemplo
+En 
+Encontrar 
+ en 
+ entero 
+ enunciado 
+ es 
+ esta 
+ este 
+explícitamente
+Hallar 
+ implementar 
+Implementar 
+ juego 
+Las 
+ las 
+ la 
+ listas
+Los 
+ los 
+Luego
+ más 
+ mediante 
+método
+momento
+ nuevo 
+números
+número
+Obviamente
+palabra
+ para todo 
+ parte 
+ primer 
+ primera 
+producto_cartesiano
+raíz cuadrada
+Recursión doble
+recursión doble
+Recursión
+recursión
+recursiva
+ sea 
+Sea 
+Secuencias
+segundo mtd
+ si 
+ sobre 
+ solicite 
+Soluciones
+Solución
+soluciones
+solución 
+sumar_dicts
+ suma 
+ que 
+ que,
+ que:
+ qué 
+ tiene 
+Unas 
+Una 
+ un 
+ unas 
+ una 
+utilice 
+utilizando 
+validaciones
+valor numérico
+valores numéricos
+ valores
+ valor
+veces
+veremos
+vez

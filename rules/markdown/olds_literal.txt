@@ -1,0 +1,11 @@
+ arriba\n
+ cadena\n
+ lista\n
+ para toda 
+ para todas 
+ para todo 
+ para todos 
+ parte)
+(por 
+{si 
+# codigo

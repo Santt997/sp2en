@@ -1,0 +1,11 @@
+ up\n
+ `str`\n
+ list\n
+ $\forall$ 
+ $\forall$ 
+ $\forall$ 
+ $\forall$ 
+ part)
+(by 
+{if 
+# code
