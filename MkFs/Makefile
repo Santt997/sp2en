@@ -10,7 +10,7 @@ PROJECT_DIR=$(ROOT_DIR)
 ENV_NAME := sp2en
 MAMBA=micromamba
 
-YML_FILE := $(PROJECT_DIR)/Envs/sp2en.yml
+YML_FILE := $(PROJECT_DIR)/YMLs/sp2en.yml
 
 LOG_DIR := $(HOME)/sp2en_logs
 
