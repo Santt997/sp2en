@@ -41,7 +41,7 @@ else
     fi
 fi
 
-echo -e "Using Python: ${GREEN}$($PYTHON_BIN --version) ($PYTHON_BIN)${NC}"
+echo -e "UsingPython: ${GREEN}$($PYTHON_BIN --version) ($PYTHON_BIN)${NC}"
 
 # 2. Install/Upgrade packaging tools inside the env
 echo -e "\n${BLUE}[2/5] Installing/Upgrading build and twine...${NC}"
@@ -54,8 +54,8 @@ echo -e "\n${BLUE}[3/5] Cleaning old build files...${NC}"
 rm -rf dist/ build/ *.egg-info/
 echo -e "Cleaned old build artifacts."
 
-# 4. Build package
-echo -e "\n${BLUE}[4/5] Building package (sdist and wheel)...${NC}"
+# 4. BuildPackage
+echo -e "\n${BLUE}[4/5] BuildingPackage (sdist and wheel)...${NC}"
 $PYTHON_BIN -m build
 echo -e "${GREEN}Build completed successfully! Here are the generated files:${NC}"
 ls -lh dist/
