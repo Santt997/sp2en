@@ -75,8 +75,8 @@ echo -e "  - Password: ${GREEN}pypi-your-api-token-val${NC}"
 echo -e "==============================================="
 
 echo -e "\nWhere would you like 2publish?"
-echo -e "1) ${BLUE}TestPyPI${NC} (Safe test upload - requires account at test.pypi.org)"
-echo -e "2) ${GREEN}PyPI${NC} (Official release - requires account at pypi.org)"
+echo -e "1) ${BLUE}TestPyPI${NC} (Safe test upload - reqs accountAt test.pypi.org)"
+echo -e "2) ${GREEN}PyPI${NC} (Official release - reqs accountAt pypi.org)"
 echo -e "3) ${YELLOW}Do not publish${NC} (Keep build files local)"
 
 read -rp "Select an option [1-3]: " option
