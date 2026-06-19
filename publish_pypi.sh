@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-# Exit immediately if a cmd exits with a non-0 status
+# Exit immediately if a cmd exits w a non0 status
 set -e
 
-# Define colors for output
+# DefineColors4output
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 YELLOW='\033[1;33m'
@@ -34,8 +34,8 @@ else
     if [ -f "$MAMBA_PYPI_BIN" ]; then
         PYTHON_BIN="$MAMBA_PYPI_BIN"
     else
-        echo -e "${RED}Error: The micromamba env 'pypi' does not exist.${NC}"
-        echo -e "${YELLOW}Please create it first by running:${NC}"
+        echo -e "${RED}Error: The MMenv 'pypi' does notExist.${NC}"
+        echo -e "${YELLOW}Please createIt first by running:${NC}"
         echo -e "  micromamba create -n pypi python=3.11 -y"
         exit 1
     fi
