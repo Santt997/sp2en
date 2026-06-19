@@ -61,7 +61,7 @@ echo -e "${GREEN}Build completed successfully! Here are the generated files:${NC
 ls -lh dist/
 
 # 5. Check package validity
-echo -e "\n${BLUE}[5/5] Checking package metadata with twine check...${NC}"
+echo -e "\n${BLUE}[5/5] Checking package metadata w twine check...${NC}"
 $PYTHON_BIN -m twine check dist/*
 echo -e "${GREEN}Twine checks passed! Package is structurally valid.${NC}"
 
