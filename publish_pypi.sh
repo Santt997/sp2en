@@ -79,7 +79,7 @@ echo -e "1) ${BLUE}TestPyPI${NC} (Safe test upload - reqs accountAt test.pypi.or
 echo -e "2) ${GREEN}PyPI${NC} (Official release - reqs accountAt pypi.org)"
 echo -e "3) ${YELLOW}Do not publish${NC} (Keep build files local)"
 
-read -rp "Select an option [1-3]: " option
+read -rp "Select [1-3]: " option
 
 case $option in
     1)
@@ -90,15 +90,15 @@ case $option in
         echo -e "  ${YELLOW}pip install --index-url https://pypi.org --extra-index-url https://pypi.org sp2en${NC}"
         ;;
     2)
-        echo -e "\n${GREEN}Uploading 2PyPI (Official Release)...${NC}"
+        echo -e "\n${GREEN}Uploading2PyPI (OfficialRelease)...${NC}"
         $PYTHON_BIN -m twine upload --verbose dist/*
-        echo -e "${GREEN}Successfully published 2PyPI!${NC}"
+        echo -e "${GREEN}Successfully published 2PyPI${NC}"
         echo -e "You and anyone else can now install it using:"
         echo -e "  ${YELLOW}pip install sp2en${NC}"
         ;;
     *)
-        echo -e "\n${YELLOW}Publishing canceled. The build files remain in the dist/ folder.${NC}"
+        echo -e "\n${YELLOW}PublishingCanceled. The build files remain in the dist/ folder.${NC}"
         ;;
 esac
 
-echo -e "\n${BLUE}Done!${NC}"
+echo -e "\n${BLUE}Done${NC}"
