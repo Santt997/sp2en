@@ -17,15 +17,15 @@ echo -e "${BLUE}===============================================${NC}"
 # Navigate 2the script's directory 2ensure relative paths work
 cd "$(dirname "$0")"
 
-# 1. Check Python installation (Targeting 'pypi' micromamba env)
-echo -e "\n${BLUE}[1/5] Checking Micromamba 'pypi' env...${NC}"
+# 1. CheckPythonInstallation (Targeting 'pypi' MM env)
+echo -e "\n${BLUE}[1/5] Checking MM 'pypi' env...${NC}"
 
 # Check if the 'pypi' env is already active in the currShell
 if [[ "$MAMBA_PREFIX" == *"/envs/pypi" ]]; then
     PYTHON_BIN="$MAMBA_PREFIX/bin/python"
 else
-    # If not active, look 4the binary in the standard micromamba location
-    # Supports default paths for Linux/macOS (~/micromamba or ~/.local/share/mamba)
+    # If notActive, look 4the binary in the std MM location
+    # Supports default paths 4Linux/macOS (~/micromamba | ~/.local/share/mamba)
     MAMBA_PYPI_BIN="$HOME/micromamba/envs/pypi/bin/python"
     if [ ! -f "$MAMBA_PYPI_BIN" ]; then
         MAMBA_PYPI_BIN="$HOME/.local/share/mamba/envs/pypi/bin/python"
