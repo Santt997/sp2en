@@ -67,7 +67,7 @@ $PYTHON_BIN -m build
 echo -e "${GREEN}Build completed successfully! Here are the generated files:${NC}"
 ls -lh dist/
 
-# 4.5. Verify rules are included (NUEVO PASO)
+# 4.5. Verify rules are included (NEW STEP)
 echo -e "\n${BLUE}[4.5/5] Verifying rules files are included...${NC}"
 SDIST_FILE=$(ls dist/*.tar.gz 2>/dev/null | head -n 1)
 if [ -n "$SDIST_FILE" ]; then

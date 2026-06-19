@@ -36,12 +36,14 @@ Homepage = "https://github.com/Santt997/sp2en"
 Repository = "https://github.com/Santt997/sp2en"
 "Bug Tracker" = "https://github.com/Santt997/sp2en/issues"
 
+# Configuración de build para Hatchling
 [tool.hatch.build]
 sources = ["src"]
 
 [tool.hatch.build.targets.wheel]
+# Incluye todo el paquete (incluyendo la carpeta rules y sus .txt)
 packages = ["src/sp2en"]
 
-# Esto reemplaza a [tool.setuptools.package-data]
-[tool.hatch.build.targets.wheel.force-include]
-"src/sp2en/rules" = "sp2en/rules"
+[tool.hatch.build.targets.sdist]
+# Asegura que el source distribution incluya todos los archivos del paquete
+include = ["src/sp2en/**"]
