@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "sp2en"
-version = "0.1.3"
+version = "0.1.4"
 description = "swap spanish 2english"
 readme = "README.md"
 license = { text = "MIT" }
@@ -40,4 +40,8 @@ Repository = "https://github.com/Santt997/sp2en"
 sources = ["src"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["sp2en"]
+packages = ["src/sp2en"]
+
+# Esto reemplaza a [tool.setuptools.package-data]
+[tool.hatch.build.targets.wheel.force-include]
+"src/sp2en/rules" = "sp2en/rules"
