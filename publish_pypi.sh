@@ -17,8 +17,8 @@ echo -e "${BLUE}===============================================${NC}"
 # Navigate 2the script's directory 2ensure relative paths work
 cd "$(dirname "$0")"
 
-# 1. CheckPythonInstallation (Targeting 'pypi' MM env)
-echo -e "\n${BLUE}[1/5] Checking MM 'pypi' env...${NC}"
+# 1. CheckPythonInstallation (Targeting 'pypi' MMenv)
+echo -e "\n${BLUE}[1/5] Checking MMenv 'pypi' ...${NC}"
 
 # Check if the 'pypi' env is already active inThe currShell
 if [[ "$MAMBA_PREFIX" == *"/envs/pypi" ]]; then
