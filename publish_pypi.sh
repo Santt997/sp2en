@@ -26,11 +26,18 @@ if [[ "$MAMBA_PREFIX" == *"/envs/pypi" ]]; then
 else
     # If notActive, look 4the binary in the stdMMlocation
     # Supports default paths 4Linux/macOS (~/micromamba | ~/.local/share/mamba)
-    MAMBA_PYPI_BIN="$HOME/micromamba/envs/pypi/bin/python"
-    if [ ! -f "$MAMBA_PYPI_BIN" ]; then
-        MAMBA_PYPI_BIN="$HOME/.local/share/mamba/envs/pypi/bin/python"
+    if [ -n "$MAMBA_ROOT_PREFIX" ]; then
+        MAMBA_PYPI_BIN="$MAMBA_ROOT_PREFIX/envs/pypi/bin/python"
+    else
+        # Fallback to hardcoded paths if the env var is missing
+        MAMBA_PYPI_BIN="$HOME/mm/envs/pypi/bin/python"
+        if [ ! -f "$MAMBA_PYPI_BIN" ]; then
+            MAMBA_PYPI_BIN="$HOME/micromamba/envs/pypi/bin/python"
+        fi
+        if [ ! -f "$MAMBA_PYPI_BIN" ]; then
+            MAMBA_PYPI_BIN="$HOME/.local/share/mamba/envs/pypi/bin/python"
+        fi
     fi
-    
     if [ -f "$MAMBA_PYPI_BIN" ]; then
         PYTHON_BIN="$MAMBA_PYPI_BIN"
     else
