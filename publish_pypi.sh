@@ -60,14 +60,14 @@ $PYTHON_BIN -m build
 echo -e "${GREEN}Build completed successfully! Here are the generated files:${NC}"
 ls -lh dist/
 
-# 5. Check package validity
+# 5. CheckPackageValidity
 echo -e "\n${BLUE}[5/5] Checking package metadata w twine check...${NC}"
 $PYTHON_BIN -m twine check dist/*
 echo -e "${GREEN}Twine checks passed! Package is structurally valid.${NC}"
 
-# 6. Publish section
+# 6. PublishSection
 echo -e "\n${YELLOW}===============================================${NC}"
-echo -e "${YELLOW}           Ready 2Publish 2PyPI!            ${NC}"
+echo -e "${YELLOW}           Ready 2Publish 2PyPI            ${NC}"
 echo -e "${YELLOW}===============================================${NC}"
 echo -e "2upload, you will need your PyPI API Token."
 echo -e "  - Username: ${GREEN}__token__${NC}"
