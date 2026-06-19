@@ -24,21 +24,19 @@ def main() -> None:
         'target',
         nargs='?',
         default='.',
-        help='Target directory'
+        help='TargetDirectory'
     )
 
     parser.add_argument(
         '--dry-run',
         action='store_true',
-        help='Preview changes without writing files'
+        help='Preview changes !w writing fs'
     )
 
     args = parser.parse_args()
 
 
-    # =========================================================
     # Logging
-    # =========================================================
 
     logging.basicConfig(
         level=logging.INFO,
@@ -55,9 +53,7 @@ def main() -> None:
     logger: logging.Logger = logging.getLogger(__name__)
 
 
-    # =========================================================
     # Paths
-    # =========================================================
 
     root: Path = Path(
         args.target
@@ -77,9 +73,7 @@ def main() -> None:
     logger.info('DRY_RUN: %s', args.dry_run)
 
 
-    # =========================================================
     # Validation
-    # =========================================================
 
     if not root.exists():
 
@@ -100,9 +94,7 @@ def main() -> None:
         sys.exit(1)
 
 
-    # =========================================================
     # Helpers
-    # =========================================================
 
     def read_lines(
         path: Path,
@@ -132,9 +124,7 @@ def main() -> None:
         ]
 
 
-    # =========================================================
     # Rules
-    # =========================================================
 
     class Rules:
 
@@ -225,9 +215,7 @@ def main() -> None:
     julia_rules = Rules('julia')
 
 
-    # =========================================================
     # Regex
-    # =========================================================
 
     CODE_BLOCK_PATTERN = re.compile(
         r'```.*?```',
@@ -257,9 +245,7 @@ def main() -> None:
         )
 
 
-    # =========================================================
-    # Protected blocks
-    # =========================================================
+    # ProtectedBlocks
 
     def protect_pattern(
         text: str,
@@ -337,9 +323,7 @@ def main() -> None:
         return out
 
 
-    # =========================================================
     # Replacements
-    # =========================================================
 
     def apply_replacements(
         text: str,
@@ -353,17 +337,13 @@ def main() -> None:
 
         placeholders: dict[str, str] = {}
 
-        # -----------------------------------------------------
-        # protect markdown blocks
-        # -----------------------------------------------------
+        # protect mad blocks
 
         if protect_special:
 
             out, placeholders = protect_special_blocks(out)
 
-        # -----------------------------------------------------
-        # literal replacements
-        # -----------------------------------------------------
+        # literalReplacements
 
         for old, new in rules.literal_pairs:
 
@@ -380,9 +360,7 @@ def main() -> None:
                     new
                 )
 
-        # -----------------------------------------------------
         # word replacements
-        # -----------------------------------------------------
 
         for old, new in rules.word_pairs:
 
@@ -403,9 +381,7 @@ def main() -> None:
                     out
                 )
 
-        # -----------------------------------------------------
         # restore protected blocks
-        # -----------------------------------------------------
 
         if protect_special:
 
@@ -416,10 +392,7 @@ def main() -> None:
 
         return out, hits
 
-
-    # =========================================================
     # Diff
-    # =========================================================
 
     def compact_diff(
         before: str,
@@ -444,9 +417,7 @@ def main() -> None:
         return '\n'.join(lines)
 
 
-    # =========================================================
-    # Notebook language
-    # =========================================================
+    # Nb lang
 
     def notebook_language(
         nb: dict[str, Any]
@@ -487,10 +458,7 @@ def main() -> None:
 
         return 'unknown'
 
-
-    # =========================================================
-    # Find notebooks
-    # =========================================================
+    # Find nbs
 
     ipynb_files: list[Path] = sorted(
         root.rglob('*.ipynb')
@@ -517,9 +485,7 @@ def main() -> None:
         )
 
 
-    # =========================================================
     # Processing
-    # =========================================================
 
     changed_files: int = 0
     changed_cells: int = 0
@@ -588,9 +554,7 @@ def main() -> None:
             if not source:
                 continue
 
-            # =================================================
             # MARKDOWN
-            # =================================================
 
             if cell_type == 'markdown':
 
@@ -598,15 +562,11 @@ def main() -> None:
 
                 protect_special = True
 
-            # =================================================
             # CODE
-            # =================================================
 
             elif cell_type == 'code':
 
-                # ---------------------------------------------
                 # python
-                # ---------------------------------------------
 
                 if notebook_lang == 'python':
 
@@ -617,9 +577,7 @@ def main() -> None:
 
                     continue
 
-                # ---------------------------------------------
                 # julia
-                # ---------------------------------------------
 
                 elif notebook_lang == 'julia':
 
@@ -627,9 +585,7 @@ def main() -> None:
 
                     protect_special = False
 
-                # ---------------------------------------------
                 # unknown
-                # ---------------------------------------------
 
                 else:
 
@@ -644,9 +600,7 @@ def main() -> None:
 
                 continue
 
-            # =================================================
             # process
-            # =================================================
 
             original = ''.join(source)
 
@@ -704,9 +658,7 @@ def main() -> None:
 
                 changed_cells += 1
 
-        # =====================================================
         # save
-        # =====================================================
 
         if file_changed:
 
@@ -762,9 +714,7 @@ def main() -> None:
             )
 
 
-    # =========================================================
-    # Summary
-    # =========================================================
+    # Summ
 
     logger.info('=========================================================')
     logger.info('DONE')
