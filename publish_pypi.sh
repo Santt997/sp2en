@@ -67,6 +67,25 @@ $PYTHON_BIN -m build
 echo -e "${GREEN}Build completed successfully! Here are the generated files:${NC}"
 ls -lh dist/
 
+# 4.5. Verify rules are included (NUEVO PASO)
+echo -e "\n${BLUE}[4.5/5] Verifying rules files are included...${NC}"
+SDIST_FILE=$(ls dist/*.tar.gz 2>/dev/null | head -n 1)
+if [ -n "$SDIST_FILE" ]; then
+    RULES_COUNT=$(tar -tzf "$SDIST_FILE" | grep -c "rules/.*\.txt" || true)
+    if [ "$RULES_COUNT" -gt 0 ]; then
+        echo -e "${GREEN}✓ Found $RULES_COUNT rules files in the package${NC}"
+        echo -e "Sample files included:"
+        tar -tzf "$SDIST_FILE" | grep "rules/.*\.txt" | head -n 5 | sed 's/^/  - /'
+    else
+        echo -e "${RED}✗ ERROR: No rules files found in the package!${NC}"
+        echo -e "${YELLOW}The package will not work correctly without the rules files.${NC}"
+        echo -e "Please check your pyproject.toml configuration."
+        exit 1
+    fi
+else
+    echo -e "${YELLOW}⚠ Warning: Could not find sdist file to verify rules${NC}"
+fi
+
 # 5. CheckPackageValidity
 echo -e "\n${BLUE}[5/5] Checking package metadata w twine check...${NC}"
 $PYTHON_BIN -m twine check dist/*
