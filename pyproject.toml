@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "sp2en"
-version = "0.1.2"
+version = "0.1.3"
 description = "swap spanish 2english"
 readme = "README.md"
 license = { text = "MIT" }
