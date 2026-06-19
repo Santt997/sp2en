@@ -112,7 +112,7 @@ run:
 	echo "[OK] Completed"
 
 clean:
-	@echo "🧹 Cleaning build artifacts..."
+	@echo "🧹 CleaningBuildArtifacts..."
 
 	cd $(ROOT_DIR) && \
 	rm -rf dist build *.egg-info
