@@ -20,11 +20,11 @@ cd "$(dirname "$0")"
 # 1. CheckPythonInstallation (Targeting 'pypi' MM env)
 echo -e "\n${BLUE}[1/5] Checking MM 'pypi' env...${NC}"
 
-# Check if the 'pypi' env is already active in the currShell
+# Check if the 'pypi' env is already active inThe currShell
 if [[ "$MAMBA_PREFIX" == *"/envs/pypi" ]]; then
     PYTHON_BIN="$MAMBA_PREFIX/bin/python"
 else
-    # If notActive, look 4the binary in the std MM location
+    # If notActive, look 4the binary in the stdMMlocation
     # Supports default paths 4Linux/macOS (~/micromamba | ~/.local/share/mamba)
     MAMBA_PYPI_BIN="$HOME/micromamba/envs/pypi/bin/python"
     if [ ! -f "$MAMBA_PYPI_BIN" ]; then
