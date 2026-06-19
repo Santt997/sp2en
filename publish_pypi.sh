@@ -11,25 +11,25 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 echo -e "${BLUE}===============================================${NC}"
-echo -e "${BLUE}          sp2en PyPI Release Assistant         ${NC}"
+echo -e "${BLUE}          sp2en PyPI ReleaseAssistant         ${NC}"
 echo -e "${BLUE}===============================================${NC}"
 
-# Navigate 2the script's directory 2ensure relative paths work
+# Navigate 2the script's directory 2ensure relativePaths work
 cd "$(dirname "$0")"
 
 # 1. CheckPythonInstallation (Targeting 'pypi' MMenv)
 echo -e "\n${BLUE}[1/5] Checking MMenv 'pypi' ...${NC}"
 
-# Check if the 'pypi' env is already active inThe currShell
+# CheckIfThe 'pypi' env is already active inThe currShell
 if [[ "$MAMBA_PREFIX" == *"/envs/pypi" ]]; then
     PYTHON_BIN="$MAMBA_PREFIX/bin/python"
 else
-    # If notActive, look 4the binary in the stdMMlocation
+    # If notActive, look 4the binary inThe stdMMlocation
     # Supports default paths 4Linux/macOS (~/micromamba | ~/.local/share/mamba)
     if [ -n "$MAMBA_ROOT_PREFIX" ]; then
         MAMBA_PYPI_BIN="$MAMBA_ROOT_PREFIX/envs/pypi/bin/python"
     else
-        # Fallback to hardcoded paths if the env var is missing
+        # Fallback 2hardcoded paths if the envVar isMissing
         MAMBA_PYPI_BIN="$HOME/mm/envs/pypi/bin/python"
         if [ ! -f "$MAMBA_PYPI_BIN" ]; then
             MAMBA_PYPI_BIN="$HOME/micromamba/envs/pypi/bin/python"
