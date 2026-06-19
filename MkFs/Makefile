@@ -118,7 +118,7 @@ clean:
 	rm -rf dist build *.egg-info
 
 deep-clean: clean clean-logs
-	@echo "💀 Deep cleaning repo..."
+	@echo "💀 DeepCleaningRepo..."
 
 	cd $(ROOT_DIR) && \
 	find . -type d -name "__pycache__" -exec rm -rf {} + && \
