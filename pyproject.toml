@@ -28,7 +28,9 @@ classifiers = [
 requires-python = ">=3.14"
 
 [project.scripts]
-sp2en = "sp2en.cli:main"
+sp2en = "sp2en.core:main_function"
+
+sp2en-cli = "sp2en.cli:main_cli_function"
 
 [project.urls]
 Homepage = "https://github.com/Santt997/sp2en"
